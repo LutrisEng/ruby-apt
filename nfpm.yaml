@@ -28,5 +28,3 @@ contents:
 - src: /build/dest/usr/lib
   dst: /usr/lib
   type: tree
-deb:
-  compression: zstd

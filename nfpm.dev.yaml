@@ -26,5 +26,3 @@ contents:
 - src: /build/dest/usr/include
   dst: /usr/include
   type: tree
-deb:
-  compression: zstd

@@ -14,5 +14,3 @@ vendor: "Lutris, Inc"
 license: "RubyLicense"
 # changelog: "changelog.yaml"
 contents: []
-deb:
-  compression: zstd
