@@ -23,6 +23,83 @@ group "default" {
     ]
 }
 
+group "3_2_2" {
+    targets = [
+        "3_2_2-sid",
+        "3_2_2-bullseye",
+        "3_2_2-bookworm",
+        "3_2_2-jammy",
+        "3_2_2-lunar"
+    ]
+}
+
+group "3_1_4" {
+    targets = [
+        "3_1_4-sid",
+        "3_1_4-bullseye",
+        "3_1_4-bookworm",
+        "3_1_4-jammy",
+        "3_1_4-lunar"
+    ]
+}
+
+group "3_0_6" {
+    targets = [
+        "3_0_6-sid",
+        "3_0_6-bullseye",
+        "3_0_6-bookworm",
+        "3_0_6-jammy",
+        "3_0_6-lunar"
+    ]
+}
+
+group "2_7_8" {
+    targets = [
+        "2_7_8-bullseye"
+    ]
+}
+
+group "sid" {
+    targets = [
+        "3_2_2-sid",
+        "3_1_4-sid",
+        "3_0_6-sid"
+    ]
+}
+
+group "bullseye" {
+    targets = [
+        "3_2_2-bullseye",
+        "3_1_4-bullseye",
+        "3_0_6-bullseye",
+        "2_7_8-bullseye"
+    ]
+}
+
+group "bookworm" {
+    targets = [
+        "3_2_2-bookworm",
+        "3_1_4-bookworm",
+        "3_0_6-bookworm"
+    ]
+}
+
+group "jammy" {
+    targets = [
+        "3_2_2-jammy",
+        "3_1_4-jammy",
+        "3_0_6-jammy"
+    ]
+}
+
+group "lunar" {
+    targets = [
+        "3_2_2-lunar",
+        "3_1_4-lunar",
+        "3_0_6-lunar"
+    ]
+}
+
 target "3_2_2-sid" {
     output = ["type=local,dest=out/3.2.2/sid"]
     platforms = ["linux/amd64", "linux/arm64"]

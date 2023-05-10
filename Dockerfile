@@ -46,7 +46,9 @@ ENV DESTDIR=/build/dest
 RUN source "$HOME/.cargo/env" \
  && ../configure --prefix=/usr --enable-shared --enable-yjit \
  && make -j8 \
- && make install
+ && make install \
+ && eval "$(dpkg-architecture)" \
+ && echo "$DEB_HOST_ARCH" > /build/arch.txt
 
 FROM --platform=$BUILDPLATFORM buildplat AS nfpm
 
