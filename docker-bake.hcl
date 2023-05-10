@@ -25,7 +25,7 @@ group "default" {
 
 target "3_2_2-sid" {
     output = ["type=local,dest=out/3.2.2/sid"]
-    platforms = ["linux/arm64"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:unstable"
@@ -45,6 +45,7 @@ target "3_2_2-sid" {
 
 target "3_2_2-bullseye" {
     output = ["type=local,dest=out/3.2.2/bullseye"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bullseye"
@@ -64,6 +65,7 @@ target "3_2_2-bullseye" {
 
 target "3_2_2-bookworm" {
     output = ["type=local,dest=out/3.2.2/bookworm"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bookworm"
@@ -83,6 +85,7 @@ target "3_2_2-bookworm" {
 
 target "3_2_2-jammy" {
     output = ["type=local,dest=out/3.2.2/jammy"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:jammy"
@@ -102,6 +105,7 @@ target "3_2_2-jammy" {
 
 target "3_2_2-lunar" {
     output = ["type=local,dest=out/3.2.2/lunar"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:lunar"
@@ -121,6 +125,7 @@ target "3_2_2-lunar" {
 
 target "3_1_4-sid" {
     output = ["type=local,dest=out/3.1.4/sid"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:unstable"
@@ -140,6 +145,7 @@ target "3_1_4-sid" {
 
 target "3_1_4-bullseye" {
     output = ["type=local,dest=out/3.1.4/bullseye"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bullseye"
@@ -159,6 +165,7 @@ target "3_1_4-bullseye" {
 
 target "3_1_4-bookworm" {
     output = ["type=local,dest=out/3.1.4/bookworm"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bookworm"
@@ -178,6 +185,7 @@ target "3_1_4-bookworm" {
 
 target "3_1_4-jammy" {
     output = ["type=local,dest=out/3.1.4/jammy"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:jammy"
@@ -197,6 +205,7 @@ target "3_1_4-jammy" {
 
 target "3_1_4-lunar" {
     output = ["type=local,dest=out/3.1.4/lunar"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:lunar"
@@ -216,6 +225,7 @@ target "3_1_4-lunar" {
 
 target "3_0_6-sid" {
     output = ["type=local,dest=out/3.0.6/sid"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:unstable"
@@ -235,6 +245,7 @@ target "3_0_6-sid" {
 
 target "3_0_6-bullseye" {
     output = ["type=local,dest=out/3.0.6/bullseye"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bullseye"
@@ -254,6 +265,7 @@ target "3_0_6-bullseye" {
 
 target "3_0_6-bookworm" {
     output = ["type=local,dest=out/3.0.6/bookworm"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bookworm"
@@ -273,6 +285,7 @@ target "3_0_6-bookworm" {
 
 target "3_0_6-jammy" {
     output = ["type=local,dest=out/3.0.6/jammy"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:jammy"
@@ -292,6 +305,7 @@ target "3_0_6-jammy" {
 
 target "3_0_6-lunar" {
     output = ["type=local,dest=out/3.0.6/lunar"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/ubuntu:lunar"
@@ -311,6 +325,7 @@ target "3_0_6-lunar" {
 
 target "2_7_8-bullseye" {
     output = ["type=local,dest=out/2.7.8/bullseye"]
+    platforms = ["linux/amd64", "linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:bullseye"
