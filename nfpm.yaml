@@ -1,5 +1,5 @@
 name: "lutris-ruby-${RUBY_VERSION}"
-arch: "${DEB_HOST_ARCH}"
+arch: "${TARGETARCH}"
 platform: "linux"
 version: "${RUBY_VERSION}"
 prerelease: "${DISTRIBUTION}"
