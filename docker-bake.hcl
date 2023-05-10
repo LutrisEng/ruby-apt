@@ -1,5 +1,5 @@
 variable "RELEASE" {
-    default = "3"
+    default = "4"
 }
 
 group "default" {
@@ -25,6 +25,7 @@ group "default" {
 
 target "3_2_2-sid" {
     output = ["type=local,dest=out/3.2.2/sid"]
+    platforms = ["linux/arm64"]
     args = {
         RELEASE = "${RELEASE}"
         BASE_IMAGE = "docker.io/library/debian:unstable"

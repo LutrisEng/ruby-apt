@@ -50,13 +50,17 @@ ENV RELEASE=${RELEASE} \
     LIBFFI_PACKAGE=${LIBFFI_PACKAGE} \
     LIBGMP_PACKAGE=${LIBGMP_PACKAGE}
 COPY nfpm.yaml nfpm.preenv.yaml
-RUN envsubst < nfpm.preenv.yaml > nfpm.yaml \
+RUN eval "$(dpkg-architecture)" \
+ && export DEB_HOST_ARCH \
+ && envsubst < nfpm.preenv.yaml > nfpm.yaml \
  && nfpm package --packager deb --target .
 COPY nfpm.meta.yaml nfpm.preenv.meta.yaml
 RUN envsubst < nfpm.preenv.meta.yaml > nfpm.meta.yaml \
  && nfpm package --config nfpm.meta.yaml --packager deb --target .
 COPY nfpm.dev.yaml nfpm.preenv.dev.yaml
-RUN envsubst < nfpm.preenv.dev.yaml > nfpm.dev.yaml \
+RUN eval "$(dpkg-architecture)" \
+ && export DEB_HOST_ARCH \
+ && envsubst < nfpm.preenv.dev.yaml > nfpm.dev.yaml \
  && nfpm package --config nfpm.dev.yaml --packager deb --target .
 COPY nfpm.dev.meta.yaml nfpm.preenv.dev.meta.yaml
 RUN envsubst < nfpm.preenv.dev.meta.yaml > nfpm.dev.meta.yaml \

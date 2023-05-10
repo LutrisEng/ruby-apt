@@ -1,5 +1,5 @@
 name: "lutris-ruby-${RUBY_VERSION}-dev"
-arch: "amd64"
+arch: "${DEB_HOST_ARCH}"
 platform: "linux"
 version: "${RUBY_VERSION}"
 prerelease: "${DISTRIBUTION}"
@@ -26,3 +26,5 @@ contents:
 - src: /build/dest/usr/include
   dst: /usr/include
   type: tree
+deb:
+  compression: zstd
