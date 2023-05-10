@@ -1,0 +1,16 @@
+name: "lutris-ruby-dev"
+arch: "all"
+platform: "linux"
+version: "${RUBY_VERSION}"
+prerelease: "${DISTRIBUTION}"
+release: ${RELEASE}
+section: "default"
+priority: "extra"
+depends:
+- lutris-ruby-${RUBY_VERSION}-dev (= ${RUBY_VERSION}~${DISTRIBUTION}-${RELEASE})
+maintainer: "Lutris, Inc <contact@lutris.engineering>"
+vendor: "Lutris, Inc"
+# homepage: "http://example.com"
+license: "RubyLicense"
+# changelog: "changelog.yaml"
+contents: []

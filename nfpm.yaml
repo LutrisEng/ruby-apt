@@ -1,0 +1,30 @@
+name: "lutris-ruby-${RUBY_VERSION}"
+arch: "amd64"
+platform: "linux"
+version: "${RUBY_VERSION}"
+prerelease: "${DISTRIBUTION}"
+release: ${RELEASE}
+section: "default"
+priority: "extra"
+provides:
+- ruby
+depends:
+- libc6
+- ${LIBSSL_PACKAGE}
+- ${LIBYAML_PACKAGE}
+- ${ZLIB_PACKAGE}
+- ${LIBREADLINE_PACKAGE}
+- ${LIBFFI_PACKAGE}
+- ${LIBGMP_PACKAGE}
+maintainer: "Lutris, Inc <contact@lutris.engineering>"
+vendor: "Lutris, Inc"
+# homepage: "http://example.com"
+license: "RubyLicense"
+# changelog: "changelog.yaml"
+contents:
+- src: /build/dest/usr/bin
+  dst: /usr/bin
+  type: tree
+- src: /build/dest/usr/lib
+  dst: /usr/lib
+  type: tree

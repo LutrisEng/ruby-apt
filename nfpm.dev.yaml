@@ -1,0 +1,28 @@
+name: "lutris-ruby-${RUBY_VERSION}-dev"
+arch: "amd64"
+platform: "linux"
+version: "${RUBY_VERSION}"
+prerelease: "${DISTRIBUTION}"
+release: ${RELEASE}
+section: "default"
+priority: "extra"
+provides:
+- ruby-dev
+depends:
+- lutris-ruby-${RUBY_VERSION} (= ${RUBY_VERSION}~${DISTRIBUTION}-${RELEASE})
+- build-essential
+- libssl-dev
+- libyaml-dev
+- zlib1g-dev
+- libreadline-dev
+- libffi-dev
+- libgmp-dev
+maintainer: "Lutris, Inc <contact@lutris.engineering>"
+vendor: "Lutris, Inc"
+# homepage: "http://example.com"
+license: "RubyLicense"
+# changelog: "changelog.yaml"
+contents:
+- src: /build/dest/usr/include
+  dst: /usr/include
+  type: tree
