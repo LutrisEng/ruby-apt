@@ -1,8 +1,8 @@
 name: "lutris-ruby-${RUBY_VERSION}"
 arch: "${TARGETARCH}"
 platform: "linux"
-version: "${RUBY_VERSION}"
-prerelease: "${DISTRIBUTION}"
+version: "${PKG_VERSION}"
+prerelease: "${PKG_PRERELEASE}${DISTRIBUTION}"
 release: ${RELEASE}
 section: "default"
 priority: "extra"

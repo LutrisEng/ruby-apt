@@ -1,9 +1,10 @@
 variable "RELEASE" {
-    default = "4"
+    default = "5"
 }
 
 group "default" {
     targets = [
+        "3_3_0-preview1-sid",
         "3_2_2-sid",
         "3_2_2-bullseye",
         "3_2_2-bookworm",
@@ -20,6 +21,16 @@ group "default" {
         "3_0_6-jammy",
         "3_0_6-lunar",
         "2_7_8-bullseye",
+    ]
+}
+
+group "3_3_0-preview1" {
+    targets = [
+        "3_3_0-preview1-sid",
+        "3_3_0-preview1-bullseye",
+        "3_3_0-preview1-bookworm",
+        "3_3_0-preview1-jammy",
+        "3_3_0-preview1-lunar"
     ]
 }
 
@@ -61,6 +72,7 @@ group "2_7_8" {
 
 group "sid" {
     targets = [
+        "3_3_0-preview1-sid",
         "3_2_2-sid",
         "3_1_4-sid",
         "3_0_6-sid"
@@ -69,6 +81,7 @@ group "sid" {
 
 group "bullseye" {
     targets = [
+        "3_3_0-preview1-bullseye",
         "3_2_2-bullseye",
         "3_1_4-bullseye",
         "3_0_6-bullseye",
@@ -78,6 +91,7 @@ group "bullseye" {
 
 group "bookworm" {
     targets = [
+        "3_3_0-preview1-bookworm",
         "3_2_2-bookworm",
         "3_1_4-bookworm",
         "3_0_6-bookworm"
@@ -86,6 +100,7 @@ group "bookworm" {
 
 group "jammy" {
     targets = [
+        "3_3_0-preview1-jammy",
         "3_2_2-jammy",
         "3_1_4-jammy",
         "3_0_6-jammy"
@@ -94,10 +109,121 @@ group "jammy" {
 
 group "lunar" {
     targets = [
+        "3_3_0-preview1-lunar",
         "3_2_2-lunar",
         "3_1_4-lunar",
         "3_0_6-lunar"
     ]
+}
+
+target "3_3_0-preview1-sid" {
+    output = ["type=local,dest=out/3.3.0-preview1/sid"]
+    platforms = ["linux/amd64", "linux/arm64"]
+    args = {
+        RELEASE = "${RELEASE}"
+        BASE_IMAGE = "docker.io/library/debian:unstable"
+        DISTRIBUTION = "sid"
+        RUBY_VERSION = "3.3.0-preview1"
+        PKG_VERSION = "3.3.0"
+        PKG_PRERELEASE = "preview1-"
+        RUBY_SOURCE = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.0-preview1.tar.gz"
+        RUBY_SHA256 = "c3454a911779b8d747ab0ea87041030d002d533edacb2485fe558b7084da25ed"
+
+        LIBSSL_PACKAGE = "libssl3"
+        LIBYAML_PACKAGE = "libyaml-0-2"
+        ZLIB_PACKAGE = "zlib1g"
+        LIBREADLINE_PACKAGE = "libreadline8"
+        LIBFFI_PACKAGE = "libffi8"
+        LIBGMP_PACKAGE = "libgmp10"
+    }
+}
+
+target "3_3_0-preview1-bullseye" {
+    output = ["type=local,dest=out/3.3.0-preview1/bullseye"]
+    platforms = ["linux/amd64", "linux/arm64"]
+    args = {
+        RELEASE = "${RELEASE}"
+        BASE_IMAGE = "docker.io/library/debian:bullseye"
+        DISTRIBUTION = "bullseye"
+        RUBY_VERSION = "3.3.0-preview1"
+        PKG_VERSION = "3.3.0"
+        PKG_PRERELEASE = "preview1-"
+        RUBY_SOURCE = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.0-preview1.tar.gz"
+        RUBY_SHA256 = "c3454a911779b8d747ab0ea87041030d002d533edacb2485fe558b7084da25ed"
+
+        LIBSSL_PACKAGE = "libssl1.1"
+        LIBYAML_PACKAGE = "libyaml-0-2"
+        ZLIB_PACKAGE = "zlib1g"
+        LIBREADLINE_PACKAGE = "libreadline8"
+        LIBFFI_PACKAGE = "libffi7"
+        LIBGMP_PACKAGE = "libgmp10"
+    }
+}
+
+target "3_3_0-preview1-bookworm" {
+    output = ["type=local,dest=out/3.3.0-preview1/bookworm"]
+    platforms = ["linux/amd64", "linux/arm64"]
+    args = {
+        RELEASE = "${RELEASE}"
+        BASE_IMAGE = "docker.io/library/debian:bookworm"
+        DISTRIBUTION = "bookworm"
+        RUBY_VERSION = "3.3.0-preview1"
+        PKG_VERSION = "3.3.0"
+        PKG_PRERELEASE = "preview1-"
+        RUBY_SOURCE = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.0-preview1.tar.gz"
+        RUBY_SHA256 = "c3454a911779b8d747ab0ea87041030d002d533edacb2485fe558b7084da25ed"
+
+        LIBSSL_PACKAGE = "libssl3"
+        LIBYAML_PACKAGE = "libyaml-0-2"
+        ZLIB_PACKAGE = "zlib1g"
+        LIBREADLINE_PACKAGE = "libreadline8"
+        LIBFFI_PACKAGE = "libffi8"
+        LIBGMP_PACKAGE = "libgmp10"
+    }
+}
+
+target "3_3_0-preview1-jammy" {
+    output = ["type=local,dest=out/3.3.0-preview1/jammy"]
+    platforms = ["linux/amd64", "linux/arm64"]
+    args = {
+        RELEASE = "${RELEASE}"
+        BASE_IMAGE = "docker.io/library/ubuntu:jammy"
+        DISTRIBUTION = "jammy"
+        RUBY_VERSION = "3.3.0-preview1"
+        PKG_VERSION = "3.3.0"
+        PKG_PRERELEASE = "preview1-"
+        RUBY_SOURCE = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.0-preview1.tar.gz"
+        RUBY_SHA256 = "c3454a911779b8d747ab0ea87041030d002d533edacb2485fe558b7084da25ed"
+
+        LIBSSL_PACKAGE = "libssl3"
+        LIBYAML_PACKAGE = "libyaml-0-2"
+        ZLIB_PACKAGE = "zlib1g"
+        LIBREADLINE_PACKAGE = "libreadline8"
+        LIBFFI_PACKAGE = "libffi8"
+        LIBGMP_PACKAGE = "libgmp10"
+    }
+}
+
+target "3_3_0-preview1-lunar" {
+    output = ["type=local,dest=out/3.3.0-preview1/lunar"]
+    platforms = ["linux/amd64", "linux/arm64"]
+    args = {
+        RELEASE = "${RELEASE}"
+        BASE_IMAGE = "docker.io/library/ubuntu:lunar"
+        DISTRIBUTION = "lunar"
+        RUBY_VERSION = "3.3.0-preview1"
+        PKG_VERSION = "3.3.0"
+        PKG_PRERELEASE = "preview1-"
+        RUBY_SOURCE = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.0-preview1.tar.gz"
+        RUBY_SHA256 = "c3454a911779b8d747ab0ea87041030d002d533edacb2485fe558b7084da25ed"
+
+        LIBSSL_PACKAGE = "libssl3"
+        LIBYAML_PACKAGE = "libyaml-0-2"
+        ZLIB_PACKAGE = "zlib1g"
+        LIBREADLINE_PACKAGE = "libreadline8"
+        LIBFFI_PACKAGE = "libffi8"
+        LIBGMP_PACKAGE = "libgmp10"
+    }
 }
 
 target "3_2_2-sid" {

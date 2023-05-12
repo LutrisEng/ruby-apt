@@ -1,13 +1,13 @@
 name: "lutris-ruby-dev"
 arch: "all"
 platform: "linux"
-version: "${RUBY_VERSION}"
-prerelease: "${DISTRIBUTION}"
+version: "${PKG_VERSION}"
+prerelease: "${PKG_PRERELEASE}${DISTRIBUTION}"
 release: ${RELEASE}
 section: "default"
 priority: "extra"
 depends:
-- lutris-ruby-${RUBY_VERSION}-dev (= ${RUBY_VERSION}~${DISTRIBUTION}-${RELEASE})
+- lutris-ruby-${RUBY_VERSION}-dev (= ${PKG_VERSION}~${PKG_PRERELEASE}${DISTRIBUTION}-${RELEASE})
 maintainer: "Lutris, Inc <contact@lutris.engineering>"
 vendor: "Lutris, Inc"
 # homepage: "http://example.com"

@@ -66,6 +66,8 @@ ARG RUBY_VERSION \
     LIBREADLINE_PACKAGE=libreadline8 \
     LIBFFI_PACKAGE=libffi7 \
     LIBGMP_PACKAGE=libgmp10
+ARG PKG_VERSION="${RUBY_VERSION}" \
+    PKG_PRERELEASE=""
 COPY nfpm.yaml nfpm.preenv.yaml
 RUN envsubst < nfpm.preenv.yaml > nfpm.yaml \
  && nfpm package --packager deb --target .

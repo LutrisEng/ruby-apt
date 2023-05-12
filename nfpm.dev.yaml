@@ -1,15 +1,15 @@
 name: "lutris-ruby-${RUBY_VERSION}-dev"
 arch: "${TARGETARCH}"
 platform: "linux"
-version: "${RUBY_VERSION}"
-prerelease: "${DISTRIBUTION}"
+version: "${PKG_VERSION}"
+prerelease: "${PKG_PRERELEASE}${DISTRIBUTION}"
 release: ${RELEASE}
 section: "default"
 priority: "extra"
 provides:
 - ruby-dev
 depends:
-- lutris-ruby-${RUBY_VERSION} (= ${RUBY_VERSION}~${DISTRIBUTION}-${RELEASE})
+- lutris-ruby-${RUBY_VERSION} (= ${PKG_VERSION}~${PKG_PRERELEASE}${DISTRIBUTION}-${RELEASE})
 - build-essential
 - libssl-dev
 - libyaml-dev
